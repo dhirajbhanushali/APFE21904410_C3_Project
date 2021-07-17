@@ -89,4 +89,9 @@ public class Restaurant {
     public String getName() {
         return name;
     }
+
+    public int calculateOrderValue(List<String> items){
+
+        return 0;
+    }
 }
