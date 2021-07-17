@@ -120,10 +120,22 @@ class RestaurantTest {
     //<<<<<<<<<<<<<<<<<<<<<<<Order Cost>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     @Test
     public void calculate_order_value_based_on_items_selected(){
-        List<String> items = new ArrayList<>();
-        int expectedTotalValue = 119;
-        int actualOrderValue = restaurant.calculateOrderValue(items);
-        assertThat(expectedTotalValue, equalTo(actualOrderValue));
+        List<Item> items = new ArrayList<>();
+        //System.out.println(restaurant.getMenu());
+        items = restaurant.getMenu();
+
+        int expectedTotalValue1 = 388;
+        //System.out.println(restaurant.getMenu());
+        int actualOrderValue1 = restaurant.calculateOrderValue(items);
+        //System.out.println(actualOrderValue1);
+        assertThat(expectedTotalValue1, equalTo(actualOrderValue1));
+
+        restaurant.addToMenu("Pizza",345);
+        int expectedTotalValue2 = 733;
+        //System.out.println(restaurant.getMenu());
+        int actualOrderValue2 = restaurant.calculateOrderValue(items);
+        //System.out.println(actualOrderValue2);
+        assertThat(expectedTotalValue2, equalTo(actualOrderValue2));
 
     }
     //<<<<<<<<<<<<<<<<<<<<<<<Order Cost>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

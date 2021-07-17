@@ -1,4 +1,3 @@
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -90,8 +89,13 @@ public class Restaurant {
         return name;
     }
 
-    public int calculateOrderValue(List<String> items){
-
-        return 0;
+    public int calculateOrderValue(List<Item> selectedItems){
+        int totalOrderValue = 0;
+        Item item = null;
+        for(Item items: selectedItems) {
+            totalOrderValue += items.getPrice();
+        }
+        return totalOrderValue;
+        //return 0;
     }
 }
